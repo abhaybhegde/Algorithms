@@ -13,6 +13,7 @@ public class BalancedParenthesisTest {
 		assertEquals(true, BalancedParenthesis.isParenthesisBalanced("({(){}()})()({(){}()})(){()}"));
 		assertEquals(true, BalancedParenthesis.isParenthesisBalanced("[]{}(){()}((())){{{}}}{()()}{{}{}}"));
 		assertEquals(true, BalancedParenthesis.isParenthesisBalanced("[[]][][]"));
+		assertEquals(true, BalancedParenthesis.isParenthesisBalanced(""));
 		
 	}
 	
@@ -22,7 +23,7 @@ public class BalancedParenthesisTest {
 		assertEquals(false, BalancedParenthesis.isParenthesisBalanced("{}()))(()()({}}{}"));
 		assertEquals(false, BalancedParenthesis.isParenthesisBalanced("((("));
 		assertEquals(false, BalancedParenthesis.isParenthesisBalanced(")))"));
-		
+		assertEquals(false, BalancedParenthesis.isParenthesisBalanced("{{{{)"));
 	}
 
 }
