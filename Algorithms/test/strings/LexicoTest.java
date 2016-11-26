@@ -1,6 +1,4 @@
-package strings.test;
-
-import strings.*;
+package strings;
 
 import org.junit.Test;
 
