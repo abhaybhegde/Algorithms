@@ -1,4 +1,4 @@
-package strings.test;
+package strings;
 
 import strings.AnagramCheck;
 import org.junit.Test;

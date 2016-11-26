@@ -1,9 +1,8 @@
-package strings.test;
-
-import strings.Tokenizer;
+package strings;
 
 import org.junit.Test;
-import org.junit.Assert;
+
+import strings.Tokenizer;
 
 
 public class TokenizerTest {
