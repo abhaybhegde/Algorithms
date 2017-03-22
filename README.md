@@ -9,3 +9,9 @@ The list gets updated as an when the owner finds spare time :) nevertheless plea
 
 * [Find the missing number](Algorithms/src/arrays/FindTheMissingNumberInArray.java)
 * [Numbers which add upto the target](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/arrays/NumbersWhichAddUptoTarget.java)
+
+**Strings**
+
+* [Anagram Check](Algorithms/src/strings/AnagramCheck.java)
+* [Balanced Parenthesis Check](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/strings/BalancedParenthesis.java)
+* [Lexico Graphic Comparision](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/strings/LexicographicComparision.java)
