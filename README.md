@@ -8,3 +8,4 @@ The list gets updated as an when the owner finds spare time :) nevertheless plea
 **Arrays**
 
 * [Find the missing number](Algorithms/src/arrays/FindTheMissingNumberInArray.java)
+* [Numbers which add upto the target](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/arrays/NumbersWhichAddUptoTarget.java)
