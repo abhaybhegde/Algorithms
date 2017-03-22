@@ -5,6 +5,6 @@ Primary objective behind this repository is to keep the coding skills abreast an
 
 The list gets updated as an when the owner finds spare time :) nevertheless please free to raise a PR !
 
-#Arrays
+**Arrays**
 
 * [Find the missing number](Algorithms/src/arrays/FindTheMissingNumberInArray.java)
