@@ -4,3 +4,8 @@ A repository containing several algorithms that are spread across various Data S
 Primary objective behind this repository is to keep the coding skills abreast and sharp :) and more importantly learn and have fun during the process... !
 
 The list gets updated as an when the owner finds spare time :) nevertheless please free to raise a PR !
+
+**Arrays**
+
+* [Find the missing number](Algorithms/src/arrays/FindTheMissingNumberInArray.java)
+* [Numbers which add upto the target](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/arrays/NumbersWhichAddUptoTarget.java)
