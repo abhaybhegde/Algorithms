@@ -9,8 +9,8 @@ public class BreadthFirstTraversal implements GraphOperations {
 	
 	public BreadthFirstTraversal(Graph g ) {
 		
-		shortestPathTo = new int[g.getTotalNoOfVertices()];
-		visited  = new boolean[g.getTotalNoOfVertices()];
+		shortestPathTo = new int[g.getTotalNoOfNodesInGraph()];
+		visited  = new boolean[g.getTotalNoOfNodesInGraph()];
 
 	}
 	
@@ -56,25 +56,26 @@ public class BreadthFirstTraversal implements GraphOperations {
 	@Override
 	public boolean isReachable(Graph g, int source, int destination) {
 		
-		if ( source < 0 || source > g.getTotalNoOfVertices() || destination < 0 || destination > g.getTotalNoOfVertices()) {
+		if ( source < 0 || source > g.getTotalNoOfNodesInGraph() || destination < 0 || destination > g.getTotalNoOfNodesInGraph()) {
 			throw new IllegalArgumentException("Invalid source or destination node given.");
 		}
 		
-		Queue<Integer> bfsQueue = new ArrayDeque<Integer>();
-		bfsQueue.add(source);
-		visited[source] = true;
+		Node sourceNode = new Node(source);
+		Queue<Node> bfsQueue = new ArrayDeque<Node>();
+		bfsQueue.add(sourceNode);
+		visited[sourceNode.nodeNumber] = true;
 		
 		while(!bfsQueue.isEmpty()) {
 			
-			int nodeToProcess = bfsQueue.remove();
-			for ( int eachNode : g.getNodesAdjacentTo(nodeToProcess)) {
+			Node nodeToProcess = bfsQueue.remove();
+			for ( Node eachNode : g.getAdjacentNodesOf(nodeToProcess.nodeNumber)) {
 				
-				if ( destination == eachNode ) {
+				if ( destination == eachNode.nodeNumber) {
 					return true;
 				}
 				
-				if ( !visited[eachNode] ) {
-					visited[eachNode] = true;
+				if ( !visited[eachNode.nodeNumber] ) {
+					visited[eachNode.nodeNumber] = true;
 					bfsQueue.add(eachNode);
 				}
 			}

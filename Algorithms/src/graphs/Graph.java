@@ -2,104 +2,97 @@ package graphs;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Graph {
 
+	private int totalNoOfNodes; 
+	private static boolean isDirected;
+	private HashMap<Integer,ArrayList<Node>> adjacencyListMap;
+	private HashMap<String,Integer> nameToNodeMap;
+	private Map<Integer,String> nodeToNameMap;
 
-	private final int totalNoOfVertices;
-	public int getTotalNoOfVertices() {
-		return totalNoOfVertices;
-	}
+	public Graph(String inputFileName) throws FileNotFoundException {
 
-	private int totalNoOfEdges;
-	Map<Integer, LinkedList<Integer>> adjListMap;
-
-
-	
-	public Graph(String fileName) throws FileNotFoundException {
-		
-		Scanner sc = new Scanner(new File(fileName));
-		
-		int numberOfVertices = sc.nextInt();
-		if ( numberOfVertices < 0 ) {
-			sc.close();
-			throw new IllegalArgumentException("Invalid Vertices.Vertices must be > 0.");
+		Scanner sc = new Scanner(new File(inputFileName));
+		String orientation = sc.next();
+		if("directed".equals(orientation)) {
+			// Graph is directed 
+			isDirected = true;
+		} else {
+			isDirected = false;
 		}
-		this.totalNoOfVertices = numberOfVertices;
 
-		int numberOfEdges = sc.nextInt();
-		if ( numberOfEdges < 0 ) {
-			sc.close();
-			throw new IllegalArgumentException("Invalid input Edges. Must > 0");
-			
-		}
-		this.totalNoOfEdges =  numberOfEdges;
+		adjacencyListMap = new HashMap<Integer,ArrayList<Node>>();
+		nameToNodeMap = new HashMap<String,Integer>();
+		nodeToNameMap = new HashMap<Integer,String>();
 
-		
-		adjListMap = new HashMap<Integer,LinkedList<Integer>>();
-		
-		//Create empty Graph based on totalNumOfVertices and totalNoOfEdges
-		for ( int vertex = 0 ; vertex < totalNoOfVertices; ++ vertex) {
-			LinkedList<Integer> neighBours = new LinkedList<Integer>();
-			adjListMap.put(vertex, neighBours);
+		int numberOfNodes = sc.nextInt();
+		this.totalNoOfNodes =  numberOfNodes;
+
+
+		for ( int i =0; i < totalNoOfNodes; ++i ) {
+			ArrayList<Node> neighbours = new ArrayList<Node>();
+			adjacencyListMap.put(i, neighbours);
 		}
 		
-		//Start reading the rest of the input file and populate the graph
-		while ( sc.hasNextLine()) {
-			int source = sc.nextInt();
-			int destination = sc.nextInt();
-			addEdge(source,destination);
+		for ( int i =0; i < totalNoOfNodes; ++i) {
+			nameToNodeMap.put(sc.next(), i);
+		}
+		
+		
+
+		while ( sc.hasNext() ) {
+
+			String nameOne = sc.next();
+			String nameTwo = sc.next();
+
+			int source = nameToNodeMap.get(nameOne);
+			nodeToNameMap.put(source, nameOne);
+			int destination = nameToNodeMap.get(nameTwo);
+			nodeToNameMap.put(destination, nameTwo);
+			addEdges(source,nameOne, destination, nameTwo);
+
+
 		}
 		sc.close();
-		
+
 	}
-	
-	public void addEdge(int source , int destination) {
-		
-		if ( source < 0 || destination < 0 ) {
-			throw new IllegalArgumentException("Source or Destination value > 0");
+
+	private void addEdges(int source,String nameOne, int destination,String nameTwo) {
+
+		if ( source > adjacencyListMap.size() || destination > adjacencyListMap.size() ) {
+			throw new IllegalArgumentException("Source/Destination Vertex invalid. Cannot add edge.");
 		}
-		
-		// Add destination node to source's adjacency list
-		LinkedList<Integer> destinationNode = new LinkedList<Integer>();
-		destinationNode.add(destination);
-		adjListMap.get(source).addAll(destinationNode);
-		
-		// Add source node to destination's adjacency List.
-		LinkedList<Integer> sourceNode = new LinkedList<Integer>();
-		sourceNode.add(source);
-		adjListMap.get(destination).addAll(sourceNode);
-		
-		
+
+		(adjacencyListMap.get(source)).add(new Node(nameTwo,destination));
+		if ( ! isDirected ) {
+			(adjacencyListMap.get(destination)).add(new Node(nameOne,source));
+		}
+
 	}
 
-	public Iterable<Integer> getNodesAdjacentTo(int source) {
-		
-		return adjListMap.get(source);
-		
-	}
+	public int getIndexFromNames(String name ) {
 
-	public int getTotalNoOfEdges() {
-		return totalNoOfEdges;
-	}
-	
-/*	@Override
-	public String toString() {
-		
-		String s = this.totalNoOfVertices	 + " vertices," + this.totalNoOfEdges +" edges";
-		for ( int i = 0; i < this.totalNoOfVertices; ++i) {
-			s += this.totalNoOfVertices + ":";
-			for ( int w : this.getNodesAdjacentTo(i)) {
-				s += w + " ";
+		for ( int i =0; i < adjacencyListMap.size(); ++i ) {
+			if ( adjacencyListMap.get(i).equals(name) ) {
+				return i;
 			}
-			s += "\n";
 		}
-		return s;
-		
-	}*/
-	
-	
-	
-	
+		return -1;
+
+	}
+
+	public ArrayList<Node> getAdjacentNodesOf(int source) {
+		return adjacencyListMap.get(source);
+	}
+
+	public int getTotalNoOfNodesInGraph() {
+		return totalNoOfNodes;
+	}
+
+
 }
