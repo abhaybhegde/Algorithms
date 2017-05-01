@@ -4,35 +4,35 @@ import java.util.*;
 
 public class DepthFirstIterative {
 	
-	private Stack<Integer> stackOfNodes;
+	private Stack<Node> stackOfNodes;
 	private boolean [] visitedNodes;
 	
 	public DepthFirstIterative(Graph g) {
-		stackOfNodes = new Stack<Integer>();
-		visitedNodes = new boolean[g.getTotalNoOfVertices()];
+		stackOfNodes = new Stack<Node>();
+		visitedNodes = new boolean[g.getTotalNoOfNodesInGraph()];
 	}
 
 	
-	void dfs(Graph g, int source) {
+	void dfs(Graph g, Node source) {
 		
-		if ( source < 0 || source > g.getTotalNoOfVertices()) {
+		if ( source.equals(null)) {
 			throw new IllegalArgumentException();
 		}
 		
 		stackOfNodes.push(source);
-		visitedNodes[source] = true;
+		visitedNodes[source.nodeNumber] = true;
 		System.out.println("Visited: " + source);
 		
 		while ( !stackOfNodes.isEmpty() ) {
 			
-			int nodeToProcess = stackOfNodes.pop();
+			Node nodeToProcess = stackOfNodes.pop();
 			
-			for ( int eachNode : g.getNodesAdjacentTo(nodeToProcess)) {
+			for ( Node eachNode : g.getAdjacentNodesOf(nodeToProcess.nodeNumber)) {
 				
-				if (!visitedNodes[eachNode]) {
-					visitedNodes[eachNode] = true;
+				if (!visitedNodes[eachNode.nodeNumber]) {
+					visitedNodes[eachNode.nodeNumber] = true;
 					stackOfNodes.push(eachNode);
-					System.out.println("Visited:"+ eachNode);																																																										
+					System.out.println("Visited:"+ eachNode.nodeNumber);																																																										
 				}
 				
 			}
