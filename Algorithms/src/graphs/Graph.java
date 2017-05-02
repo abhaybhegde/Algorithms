@@ -12,8 +12,8 @@ public class Graph {
 	private int totalNoOfNodes; 
 	private static boolean isDirected;
 	private HashMap<Integer,ArrayList<Node>> adjacencyListMap;
-	private HashMap<String,Integer> nameToNodeMap;
-	private Map<Integer,String> nodeToNameMap;
+	private HashMap<String,Integer> nameToNodeMap;//Map Node data to integer(vertex)
+	private Map<Integer,String> nodeToNameMap;// Map vertex or node number to corresponding node data
 
 	public Graph(String inputFileName) throws FileNotFoundException {
 

@@ -1,10 +1,12 @@
 package graphs;
 
-import java.util.Iterator;
 
-class Node  implements Iterator<Node>  {
+class Node   {
 	String nodeData;
 	int nodeNumber;
+	boolean isVisited;
+
+	
 	Node next;
 	
 	Node( String theNodeData, int nodeNum ) {
@@ -16,17 +18,11 @@ class Node  implements Iterator<Node>  {
 		this.nodeNumber = nodeNumber;
 	}
 	
-
-	@Override
-	public boolean hasNext() {
-		return next == null;
+	Node() {
+		this.nodeData = null;
+		this.nodeNumber=0;
+		this.isVisited=false;
+		this.next=null;
 	}
-
-	@Override
-	public Node next() {
-		// TODO Auto-generated method stub
-		return this;
-	}
-
 
 }
