@@ -19,12 +19,8 @@ public class Graph {
 
 		Scanner sc = new Scanner(new File(inputFileName));
 		String orientation = sc.next();
-		if("directed".equals(orientation)) {
-			// Graph is directed 
-			isDirected = true;
-		} else {
-			isDirected = false;
-		}
+
+		isDirected = "directed".equals(orientation);
 
 		adjacencyListMap = new HashMap<Integer,ArrayList<Node>>();
 		nameToNodeMap = new HashMap<String,Integer>();
