@@ -7,11 +7,14 @@ public class CycleCheck  {
 	private int totalNumberOfVertices;
 
 	private Map<Integer,List<Integer>> adjacencyListMap;
+	
+	private boolean isDirected;
 
-	public CycleCheck(int vertices) {
+	public CycleCheck(int vertices,boolean orientation) {
 		this.totalNumberOfVertices = vertices;
 
 		adjacencyListMap = new HashMap<>();
+		this.isDirected = orientation;
 
 		for( int i=0; i< this.totalNumberOfVertices; ++i ) {
 			List<Integer> neighbours = new ArrayList<>();
@@ -26,6 +29,10 @@ public class CycleCheck  {
 			throw new IllegalArgumentException("Illegal Source/Destination");
 		}
 		adjacencyListMap.get(source).add(destination);
+		if(!isDirected) {
+			// Graph is un-directed, then add source to destination's adjacency map
+			adjacencyListMap.get(destination).add(source);
+		}
 		
 	}
 
@@ -36,6 +43,10 @@ public class CycleCheck  {
 
 
 	public boolean hasCycle(CycleCheck g) {
+		
+		if ( g == null ) {
+			throw new NullPointerException("Input Graph is null/empty.");
+		}
 		
 		Set<Integer> yetToExplore = new HashSet<>();
 		Set<Integer> currentlyExploring = new HashSet<>();
@@ -93,5 +104,45 @@ public class CycleCheck  {
 		destinationSet.add(current);
 	}
 
+	//For un-directed Graph
+	
+	public boolean doesTheUndirectedGraphHasCycle(CycleCheck g) {
+		
+		if ( g.equals(null)) {
+			return false;
+		}
+		
+		Set<Integer> visited = new HashSet<>();
+		for ( int i=0; i < totalNumberOfVertices;++i) {
+			if (dfsUtility(g, i, visited, null)) {
+				return true;
+			}
+		}
+		return false;
+		
+	}
 
+	private boolean dfsUtility(CycleCheck g, Integer eachNode, Set<Integer> visited, Integer parent) {
+		
+		visited.add(eachNode);
+		
+		for ( Integer neighBour : g.getAdjacentNodesOf(eachNode)) {
+			
+			if (visited.contains(neighBour)) {
+				continue;
+			}
+			
+			if ( neighBour.equals(parent)) {
+				return true;
+			}
+			
+			if ( dfsUtility(g, neighBour, visited, eachNode)) {
+				return true;
+			}
+		}
+		
+		
+		
+		return false;
+	}
 }
