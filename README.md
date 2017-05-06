@@ -15,3 +15,9 @@ The list gets updated as an when the owner finds spare time :) nevertheless plea
 * [Anagram Check](Algorithms/src/strings/AnagramCheck.java)
 * [Balanced Parenthesis Check](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/strings/BalancedParenthesis.java)
 * [Lexico Graphic Comparision](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/strings/LexicographicComparision.java)
+
+**Graphs**
+
+* [Graph Abstract Data Type](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/Graph.java)
+* [Check if a Graph is Cyclic](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/CycleCheck.java)
+* [Depth First Traversal - Itervative](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/DepthFirstIterative.java)
