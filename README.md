@@ -21,3 +21,4 @@ The list gets updated as an when the owner finds spare time :) nevertheless plea
 * [Graph Abstract Data Type](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/Graph.java)
 * [Check if a Graph is Cyclic](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/CycleCheck.java)
 * [Depth First Traversal - Itervative](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/DepthFirstIterative.java)
+* [Depth First Traversal - Recursive](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/DepthFirstSearchRecursiveImpl.java)
