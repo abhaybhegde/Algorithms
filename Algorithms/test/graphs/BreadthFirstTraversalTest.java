@@ -1,5 +1,7 @@
 package graphs;
 
+import static org.junit.Assert.*;
+
 import java.io.FileNotFoundException;
 
 import org.junit.*;
@@ -19,7 +21,7 @@ public class BreadthFirstTraversalTest {
 		 int source = 0 ;
 		 int destination = 4;
 		 BreadthFirstTraversal bfsGraph = new BreadthFirstTraversal(testGraph);
-		 System.out.println(bfsGraph.isReachable(testGraph, source, destination));
+		 assertEquals(false,bfsGraph.isReachable(testGraph, source, destination));
 		 
 		 
 	}
