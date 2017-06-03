@@ -25,7 +25,6 @@ public class BalancedParenthesisTest {
 		assertEquals(false, BalancedParenthesis.isParenthesisBalanced(")))"));
 		assertEquals(false, BalancedParenthesis.isParenthesisBalanced("{{{{)"));
 		assertEquals(false, BalancedParenthesis.isParenthesisBalanced("[[[[[)"));
-		assertEquals(false, BalancedParenthesis.isParenthesisBalanced("{(})"));
 	}
 
 }
