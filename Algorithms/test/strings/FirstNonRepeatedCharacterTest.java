@@ -22,4 +22,10 @@ public class FirstNonRepeatedCharacterTest {
 	}
 
 
+	@Test(expected=NullPointerException.class)
+	public void null_test_firstNonRepeatedCharacter() {
+		
+		FirstNonRepeatedCharacter.firstNonRepeatedCharacter(null);
+	}
+
 }

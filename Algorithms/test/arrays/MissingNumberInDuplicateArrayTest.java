@@ -13,5 +13,14 @@ public class MissingNumberInDuplicateArrayTest {
 		
 		assertEquals(7, MissingNumberInDuplicateArray.findTheMissingNumber(biggerArray, smallerArray));
 	}
+	
+	@Test(expected=NullPointerException.class)
+	public void null_test_findTheMissingNumber() {
+		int [] biggerArray = null;
+		int [] smallerArray = null;
+		
+		MissingNumberInDuplicateArray.findTheMissingNumber(biggerArray, smallerArray);
+	}
+	
 
 }
