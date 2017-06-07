@@ -16,6 +16,10 @@ The list gets updated as an when the owner finds spare time :) nevertheless plea
 * [Balanced Parenthesis Check](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/strings/BalancedParenthesis.java)
 * [Lexico Graphic Comparision](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/strings/LexicographicComparision.java)
 
+**Trees**
+* [Is Binary Search Tree](Algorithms/src/trees/IsBinarySearchTree.java)
+
+
 **Graphs**
 
 * [Graph Abstract Data Type](https://github.com/abhaybhegde/Algorithms/blob/master/Algorithms/src/graphs/Graph.java)
