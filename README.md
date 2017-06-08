@@ -26,6 +26,7 @@ The list gets updated as an when the owner finds spare time :) nevertheless plea
 
 **Trees**
 * [Is Binary Search Tree](Algorithms/src/trees/IsBinarySearchTree.java)
+* [Lowest Common Ancestor](Algorithms/src/trees/LeastCommonAncestor.java)
 
 
 **Graphs**
