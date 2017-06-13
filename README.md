@@ -1,9 +1,7 @@
 # Algorithms [![Build Status](https://travis-ci.org/abhaybhegde/Algorithms.svg?branch=master)](https://travis-ci.org/abhaybhegde/Algorithms)
 A repository containing several algorithms that are spread across various Data Structures ranging from Strings,Arrays to Graphs.  Each of the algorithms are backed by test cases. The implementation is in Java.
 
-Primary objective behind this repository is to keep the coding skills abreast and sharp :) and more importantly learn and have fun during the process... !
-
-The list gets updated as an when the owner finds spare time :) nevertheless please free to raise a PR !
+Motivation: Coding is a perishable skill hence its important to keep the thought process flowing. Feel free to contribute by adding/improving to the below list.
 
 **Arrays**
 
