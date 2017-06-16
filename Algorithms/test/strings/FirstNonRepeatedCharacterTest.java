@@ -28,4 +28,11 @@ public class FirstNonRepeatedCharacterTest {
 		FirstNonRepeatedCharacter.firstNonRepeatedCharacter(null);
 	}
 
+	@Test
+	public void nonRepeatedCharacterAtTheEnd() {
+		
+		assertEquals((Character)'z', FirstNonRepeatedCharacter.firstNonRepeatedCharacter("aaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaz"));
+	}
+
 }
