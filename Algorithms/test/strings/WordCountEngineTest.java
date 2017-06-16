@@ -13,5 +13,12 @@ public class WordCountEngineTest {
 		String input = "Practice makes perfect. you'll only get Perfect by practice. just practice!";
 		assertEquals("[practice=3, perfect=2, youll=1, get=1, by=1, makes=1, only=1, just=1]",WordCountEngine.wordCount(input).toString());
 	}
+	
+	@Test(expected = NullPointerException.class)
+	public void test_emptyString() {
+		String input = null;
+		WordCountEngine.wordCount(input);
+	}
+	
 
 }

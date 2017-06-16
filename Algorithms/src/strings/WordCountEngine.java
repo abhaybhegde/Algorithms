@@ -57,6 +57,10 @@ public class WordCountEngine {
 	
 	public static List<Entry<String,Integer>> wordCount(String input) {
 		
+		if ( input == null) {
+			throw new NullPointerException();
+		}
+		
 		Map<String,Integer> wordCount = new HashMap<>();
 		String parserdString = PUNCTUATION.matcher(input).replaceAll("").toLowerCase();
 		String [] inputWords = parserdString.replace(".", " ").split("\\s+");
