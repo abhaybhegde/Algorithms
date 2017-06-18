@@ -16,5 +16,13 @@ public class LeastCommonAncestorTest {
 		assertEquals(3,LeastCommonAncestor.leastCommonAncestorOf(root, 6, 7).data);
 		
 	}
+	
+	@Test
+	public void leastCommonAncestorShoulreturnNullWhenNullValueIsPassed() {
+		Node root = null;
+		
+		assertEquals(null,LeastCommonAncestor.leastCommonAncestorOf(root, 6, 7));
+		
+	}
 
 }
