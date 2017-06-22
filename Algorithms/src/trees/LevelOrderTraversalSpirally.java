@@ -50,7 +50,6 @@ public class LevelOrderTraversalSpirally {
 
 		while (!evenStack.isEmpty() || !oddStack.isEmpty()) {
 
-			// If level is even
 			while (!evenStack.isEmpty()) {
 
 				Node temp = evenStack.peek();
