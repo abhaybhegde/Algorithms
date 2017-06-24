@@ -37,7 +37,13 @@ public class LevelOrderTraversalSpirallyTest {
 		root.leftChild = new Node(30);
 		root.leftChild.leftChild = new Node(40);
 		root.leftChild.leftChild.leftChild = new Node(50);
-		System.out.println(LevelOrderTraversalSpirally.levelOrderTraversalSpirallyIterativeApproach(root).toString());
+		assertEquals("[20, 30, 40, 50]",LevelOrderTraversalSpirally.levelOrderTraversalSpirallyIterativeApproach(root).toString());
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void test_with_null() {
+		Node root = null;
+		LevelOrderTraversalSpirally.levelOrderTraversalSpirallyIterativeApproach(root);
 	}
 	
 	

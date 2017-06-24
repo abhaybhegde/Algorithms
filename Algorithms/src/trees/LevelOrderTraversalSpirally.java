@@ -32,7 +32,7 @@ public class LevelOrderTraversalSpirally {
 	 */
 	public static List<Integer> levelOrderTraversalSpirallyIterativeApproach(Node root) {
 		if (root == null) {
-			throw new NullPointerException("Root node is null.");
+			throw new NullPointerException();
 		}
 		
 		List<Integer> spiralTravesal = new ArrayList<>();
