@@ -46,6 +46,16 @@ public class LevelOrderTraversalSpirallyTest {
 		LevelOrderTraversalSpirally.levelOrderTraversalSpirallyIterativeApproach(root);
 	}
 	
+	@Test
+	public void test_with_leftRightSkewedTree() {
+		Node root = new Node(20);
+		root.leftChild = new Node(15);
+		root.leftChild.leftChild = new Node(30);
+		root.leftChild.leftChild.rightChild = new Node(60);
+		root.leftChild.leftChild.rightChild.rightChild = new Node(50);
+		
+		assertEquals("[20, 15, 30, 60, 50]", LevelOrderTraversalSpirally.levelOrderTraversalSpirallyIterativeApproach(root).toString());
+	}
 	
 	
 
