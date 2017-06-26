@@ -15,7 +15,7 @@ import java.util.Stack;
  * Iterative approach,where we maintain two stack which will contain nodes of current level
  * being traversed.
  * 
- * While traversing a particular,we push the nodes(child) of the next level to another stack
+ * While traversing a particular level,we push the nodes(child) of the next level to another stack
  * and pop from current stack after exploring the node.
  * 
  *
