@@ -19,5 +19,14 @@ public class SizeOfBinaryTreeTest {
 		 
 		
 	}
+	
+	@Test
+	public void sizeOfBinaryShouldReturn0WhenNullRootNodeIsPassed() {
+		
+		Node root = null;
+		assertEquals(0,SizeOfBinaryTree.sizeOfBinaryTree(root));
+		 
+		
+	}
 
 }
