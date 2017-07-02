@@ -38,5 +38,16 @@ public class SizeOfBinaryTreeTest {
 		assertEquals(4,SizeOfBinaryTree.sizeOfBinaryTree(root));
 		
 	}
+	
+	@Test
+	public void sizeOfLeftSkewedBinaryTree() {
+		
+		Node root = new Node(20);
+		root.leftChild = new Node(30);
+		root.leftChild.leftChild = new Node(40);
+		root.leftChild.leftChild.leftChild = new Node(50);
+		assertEquals(4,SizeOfBinaryTree.sizeOfBinaryTree(root));
+		
+	}
 
 }
