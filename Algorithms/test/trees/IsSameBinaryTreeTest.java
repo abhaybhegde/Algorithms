@@ -39,5 +39,15 @@ public class IsSameBinaryTreeTest {
 		
 		assertFalse(IsSameBinaryTree.isBinaryTreeSame(rootOne, rootTwo));
 	}
+	
+	@Test
+	public void isSameBinaryTreeShouldReturnTrueNullsArePassed() {
+		
+		Node rootOne = null;
+		
+		Node rootTwo = null;
+		
+		assertTrue(IsSameBinaryTree.isBinaryTreeSame(rootOne, rootTwo));
+	}
 
 }
