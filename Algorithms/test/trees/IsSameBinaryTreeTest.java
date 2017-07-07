@@ -44,10 +44,18 @@ public class IsSameBinaryTreeTest {
 	public void isSameBinaryTreeShouldReturnTrueNullsArePassed() {
 		
 		Node rootOne = null;
-		
 		Node rootTwo = null;
 		
 		assertTrue(IsSameBinaryTree.isBinaryTreeSame(rootOne, rootTwo));
 	}
 
+	@Test
+	public void isSameBinaryTreeShouldReturnFalseWhenOneOfTheRootNodeIsNull() {
+		
+		Node rootOne = null;
+		Node rootTwo = new Node(10);
+		rootTwo.leftChild = new Node(20);
+		rootTwo.rightChild = new Node(24);
+		assertFalse(IsSameBinaryTree.isBinaryTreeSame(rootOne, rootTwo));
+	}
 }
