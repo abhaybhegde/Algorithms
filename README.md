@@ -27,6 +27,7 @@ Motivation: Coding is a perishable skill hence its important to keep the thought
 * [Lowest Common Ancestor](Algorithms/src/trees/LeastCommonAncestor.java)
 * [Level Order Traversal Spirally - Iterative Approach](Algorithms/src/trees/LevelOrderTraversalSpirally.java)
 * [Is Binary Trees Same](Algorithms/src/trees/IsSameBinaryTree.java)
+* [Size of Binary Tree](Algorithms/src/trees/SizeOfBinaryTree.java)
 
 
 **Graphs**
