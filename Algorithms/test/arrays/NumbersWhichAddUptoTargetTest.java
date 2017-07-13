@@ -28,4 +28,15 @@ public class NumbersWhichAddUptoTargetTest {
 		
 	}
 	
+	@Test(expected=NullPointerException.class)
+	public void returnNumbersWhichAddUptoTargetShould() {
+		
+		int [] inputArray = null;
+		int target  = 6;
+	
+		
+		NumbersWhichAddUptoTarget.returnNumbersWhichAddUptoTarget(inputArray, target);
+		
+	}
+	
 }
