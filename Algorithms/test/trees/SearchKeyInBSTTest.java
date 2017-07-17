@@ -17,5 +17,14 @@ public class SearchKeyInBSTTest {
 		
 		assertEquals(15,SearchKeyInBST.searchKeyInBST(root,15).data);		
 	}
+	
+	@Test
+	public void test_with_null() {
+		
+		Node root = null;
+		
+		assertEquals(null, SearchKeyInBST.searchKeyInBST(root,15));		
+	}
+
 
 }
