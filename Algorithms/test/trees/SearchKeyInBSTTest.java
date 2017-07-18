@@ -25,6 +25,18 @@ public class SearchKeyInBSTTest {
 		
 		assertEquals(null, SearchKeyInBST.searchKeyInBST(root,15));		
 	}
+	
+	@Test
+	public void test_with_invalid_key() {
+		
+		Node root = new Node(24);
+		root.leftChild = new Node(21);
+		root.rightChild = new Node(26);
+		root.leftChild.leftChild = new Node(15);
+		root.rightChild.rightChild = new Node(35);
+		
+		assertEquals(null, SearchKeyInBST.searchKeyInBST(root,30));		
+	}
 
 
 }
