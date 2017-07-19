@@ -37,6 +37,16 @@ public class SearchKeyInBSTTest {
 		
 		assertEquals(null, SearchKeyInBST.searchKeyInBST(root,30));		
 	}
+	
+	@Test
+	public void test_with_right_skewed_tree() {
+		
+		Node root = new Node(24);
+		root.rightChild = new Node(26);
+		root.rightChild.rightChild = new Node(35);
+		root.rightChild.rightChild.rightChild = new Node(40);
+		assertEquals(40, SearchKeyInBST.searchKeyInBST(root,40).data);		
+	}
 
 
 }
