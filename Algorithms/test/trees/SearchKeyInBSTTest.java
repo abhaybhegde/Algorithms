@@ -57,6 +57,18 @@ public class SearchKeyInBSTTest {
 		root.leftChild.leftChild.leftChild = new Node(12);
 		assertEquals(12, SearchKeyInBST.searchKeyInBST(root,12).data);		
 	}
+	
+	@Test
+	public void test_with_non_binary_search_tree() {
+		
+		Node root = new Node(24);
+		root.leftChild = new Node(35);
+		root.rightChild = new Node(18);
+		root.leftChild.leftChild = new Node(100);
+		root.rightChild.rightChild = new Node(129);
+		
+		assertEquals(null, SearchKeyInBST.searchKeyInBST(root,100));	
+	}
 
 
 }
