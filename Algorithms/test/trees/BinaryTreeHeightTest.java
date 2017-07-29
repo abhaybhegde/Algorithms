@@ -17,8 +17,11 @@ public class BinaryTreeHeightTest {
 		Node root = new Node(10);
 		root.leftChild = new Node(5);
 		root.rightChild = new Node(20);
+		root.leftChild.leftChild = new Node(7);
+		root.rightChild.rightChild = new Node(9);
 		
-		assertEquals(2,BinaryTreeHeight.returnHeightOfBinaryTree(root) );
+		
+		assertEquals(3,BinaryTreeHeight.returnHeightOfBinaryTree(root) );
 		
 	}
 
