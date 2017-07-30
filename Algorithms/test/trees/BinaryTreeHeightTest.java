@@ -24,5 +24,18 @@ public class BinaryTreeHeightTest {
 		assertEquals(3,BinaryTreeHeight.returnHeightOfBinaryTree(root) );
 		
 	}
+	
+	@Test
+	public void test_with_left_skewed_trees() {
+		
+		Node root = new Node(10);
+		root.leftChild = new Node(5);
+		root.leftChild.leftChild = new Node(7);
+		root.leftChild.leftChild.leftChild = new Node(9);
+		
+		
+		assertEquals(4,BinaryTreeHeight.returnHeightOfBinaryTree(root) );
+		
+	}
 
 }
