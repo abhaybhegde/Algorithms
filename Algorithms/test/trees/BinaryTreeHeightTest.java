@@ -2,12 +2,18 @@ package trees;
 
 import static org.junit.Assert.*;
 
+import org.apache.log4j.PropertyConfigurator;
+import org.junit.Before;
 import org.junit.Test;
 
 public class BinaryTreeHeightTest {
 	
+	
+	
+	
 	@Test
 	public void test_with_null() {
+		PropertyConfigurator.configure("log4j.properties");
 		assertEquals(0,BinaryTreeHeight.returnHeightOfBinaryTree(null));
 	}
 	
