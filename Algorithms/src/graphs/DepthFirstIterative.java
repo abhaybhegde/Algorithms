@@ -2,7 +2,13 @@ package graphs;
 
 import java.util.*;
 
+import org.apache.log4j.Logger;
+
+
+
 public class DepthFirstIterative {
+	
+	final static Logger logger = Logger.getLogger(DepthFirstIterative.class);
 	
 	private Stack<Node> stackOfNodes;
 	private boolean [] visitedNodes;
@@ -21,18 +27,19 @@ public class DepthFirstIterative {
 		
 		stackOfNodes.push(source);
 		visitedNodes[source.nodeNumber] = true;
-		System.out.println("Visited: " + source);
+		logger.debug("Visited: " + source);
 		
 		while ( !stackOfNodes.isEmpty() ) {
 			
 			Node nodeToProcess = stackOfNodes.pop();
+			logger.debug("Processing Node:" + nodeToProcess.nodeNumber);
 			
 			for ( Node eachNode : g.getAdjacentNodesOf(nodeToProcess.nodeNumber)) {
 				
 				if (!visitedNodes[eachNode.nodeNumber]) {
 					visitedNodes[eachNode.nodeNumber] = true;
 					stackOfNodes.push(eachNode);
-					System.out.println("Visited:"+ eachNode.nodeNumber);																																																										
+					logger.debug("Visited:"+ eachNode.nodeNumber);																																																										
 				}
 				
 			}
