@@ -9,6 +9,6 @@ public class Test{
         e[1][1] = "haha";
         Graph g = new Graph(s,e);
         BreadthFirstTraversal bfs = new BreadthFirstTraversal(g);
-        System.out.println(bfs.isReachable(g, 1, 0));
+        System.out.println(bfs.isReachable(g,  g.getIndexFromNames("boy"), g.getIndexFromNames("haha")));
     }
 }

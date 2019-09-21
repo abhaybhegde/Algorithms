@@ -101,8 +101,8 @@ public class Graph {
 	public int getIndexFromNames(String name ) {
 
 		for ( int i =0; i < adjacencyListMap.size(); ++i ) {
-			if ( adjacencyListMap.get(i).equals(name) ) {
-				return i;
+			if (nameToNodeMap.containsKey(name) ) {
+				return  nameToNodeMap.get(name);
 			}
 		}
 		return -1;
