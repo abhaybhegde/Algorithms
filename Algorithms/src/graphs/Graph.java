@@ -58,6 +58,33 @@ public class Graph {
 
 	}
 
+	public Graph(String[] names,String[][] edges){
+		int numberOfNodes = names.length;
+		this.totalNoOfNodes = numberOfNodes;
+		adjacencyListMap = new HashMap<Integer,ArrayList<Node>>();
+		nameToNodeMap = new HashMap<String,Integer>();
+		nodeToNameMap = new HashMap<Integer,String>();	
+
+		for(int i=0;i<totalNoOfNodes;i++){
+			adjacencyListMap.put(i, new ArrayList<Node>());
+		}
+
+		for(int i=0;i<totalNoOfNodes;i++){
+			nameToNodeMap.put(names[i],i);
+			nodeToNameMap.put(i,names[i]);
+		}
+		for(int i=0;i<edges.length;i++){
+			if(edges[i].length!=2)throw new IllegalArgumentException("arg[1]'s size not conformed!");
+			String nameOne = edges[i][0];
+			String nameTwo = edges[i][1];
+			if(!nameToNodeMap.containsKey(nameOne) || !nameToNodeMap.containsKey(nameTwo))throw new IllegalArgumentException("Nodes not found in graph!");
+			int source = nameToNodeMap.get(nameOne);
+			int destination = nameToNodeMap.get(nameTwo);
+			addEdges(source, nameOne, destination, nameTwo);
+		}
+		
+	}
+
 	private void addEdges(int source,String nameOne, int destination,String nameTwo) {
 
 		if ( source > adjacencyListMap.size() || destination > adjacencyListMap.size() ) {
@@ -74,8 +101,8 @@ public class Graph {
 	public int getIndexFromNames(String name ) {
 
 		for ( int i =0; i < adjacencyListMap.size(); ++i ) {
-			if ( adjacencyListMap.get(i).equals(name) ) {
-				return i;
+			if (nameToNodeMap.containsKey(name) ) {
+				return  nameToNodeMap.get(name);
 			}
 		}
 		return -1;
