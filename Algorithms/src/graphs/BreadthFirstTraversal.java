@@ -13,7 +13,25 @@ public class BreadthFirstTraversal implements GraphOperations {
 		visited  = new boolean[g.getTotalNoOfNodesInGraph()];
 
 	}
-
+	
+/*	public void bfs(Graph g, int source) {
+		
+		visited[source] = true;
+		Queue<Integer> bfsQueue = new ArrayDeque<Integer>();
+		bfsQueue.add(source);
+		
+		while ( !bfsQueue.isEmpty() ) {
+			int node = bfsQueue.remove();
+			for ( int eachNode : g.getNodesAdjacentTo(node)) {
+				if ( ! visited[eachNode] ) {
+					shortestPathTo[eachNode] = node;
+					visited[eachNode] = true;
+					bfsQueue.add(eachNode);
+				}
+			}
+		}
+	}
+*/
 	public boolean hasPathTo(int destination) {
 		return visited[destination];
 	}
